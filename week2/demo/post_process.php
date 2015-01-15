@@ -7,12 +7,25 @@
     <body>
         <?php
         
-        if (isset($_POST['fname'])) {
+        include './validation.php';
+        
+        if( !empty($err_msg)) {
+            
+            include './POST.php';
+            exit();
+        }
+        
+        
+           if (isset($_POST['fname'])) {
             echo $_POST['fname'];
         }
         echo '<br />';
         if (isset($_POST['email'])) {
             echo $_POST['email'];
+        }
+        echo '<br />';
+        if (isset($_POST['number'])) {
+            echo $_POST['number'];
         }
         
         ?>

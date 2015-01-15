@@ -15,6 +15,9 @@
          * include
          * rand
          */
+        
+        $start_num = rand(5, 15);
+        echo $start_num;
         ?>
     </body>
 </html>

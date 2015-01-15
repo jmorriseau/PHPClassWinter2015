@@ -15,11 +15,19 @@
     // validate interest rate entry
     else if ( empty($interest_rate) ) {
         $error_message = 'Interest rate is a required field.'; }
-    else if ( !is_numeric($interest_rate) )  {
-        $error_message = 'Interest rate must be a valid number.'; }
-    else if ( $interest_rate <= 0 ) {
-        $error_message = 'Interest rate must be greater than zero.'; }
-
+    else if ( !is_numeric($interest_rate)  )  {
+        $error_message = 'Interest rate must be a valid number and less than 15.'; }
+    else if ( $interest_rate <= 0 || $interest_rate >= 16 ) {
+        $error_message = 'Interest rate must be greater than zero and less than or equal to 15.'; }
+    
+    //validate years entry
+    else if ( empty($years) ) {
+        $error_message = 'Years is a required field.'; }
+    else if (!is_numeric($years)){
+        $error_message = 'Years must be a valid number'; }
+    else if ($years <= 0 || $years >= 51){
+        $error_message = 'Years must be greater than zero and less than or equal to 50.'; }
+        
     // set error message to empty string if no invalid entries
     else {
         $error_message = ''; }
@@ -62,6 +70,7 @@
 
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br />
+        <?php echo 'This calculation was done on '. date('m.d.Y'); ?>
     </div>
 </body>
 </html>
