@@ -29,7 +29,7 @@ label {
 br {
     clear: left;
 }
-error, p {
+.error, p {
     color: red;
     font-weight: bold;
 }
