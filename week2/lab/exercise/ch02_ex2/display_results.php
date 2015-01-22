@@ -3,34 +3,32 @@
     $investment = $_POST['investment'];
     $interest_rate = $_POST['interest_rate'];
     $years = $_POST['years'];
-
-    // validate investment entry
+    $error_message = '';
+    
+    // validate investment entry 
     if ( empty($investment) ) {
-        $error_message = 'Investment is a required field.'; }
+        $error_message .= '<p>Investment is a required field.</p>'; }
     else if ( !is_numeric($investment) )  {
-        $error_message = 'Investment must be a valid number.'; }
+        $error_message .= '<p>Investment must be a valid number.</p>'; }
     else if ( $investment <= 0 ) {
-        $error_message = 'Investment must be greater than zero.'; }
+        $error_message .= '<p>Investment must be greater than zero.</p>'; }
 
     // validate interest rate entry
-    else if ( empty($interest_rate) ) {
-        $error_message = 'Interest rate is a required field.'; }
+    if ( empty($interest_rate) ) {
+        $error_message .= '<p>Interest rate is a required field.</p>'; }
     else if ( !is_numeric($interest_rate)  )  {
-        $error_message = 'Interest rate must be a valid number and less than 15.'; }
+        $error_message .= '<p>Interest rate must be a valid number and less than 15.</p>'; }
     else if ( $interest_rate <= 0 || $interest_rate >= 16 ) {
-        $error_message = 'Interest rate must be greater than zero and less than or equal to 15.'; }
+        $error_message .= '<p>Interest rate must be greater than zero and less than or equal to 15.</p>'; }
     
     //validate years entry
-    else if ( empty($years) ) {
-        $error_message = 'Years is a required field.'; }
+    if ( empty($years) ) {
+        $error_message .= '<p>Years is a required field.</p>'; }
     else if (!is_numeric($years)){
-        $error_message = 'Years must be a valid number'; }
+        $error_message .= '<p>Years must be a valid number.</p>'; }
     else if ($years <= 0 || $years >= 51){
-        $error_message = 'Years must be greater than zero and less than or equal to 50.'; }
+        $error_message .= '<p>Years must be greater than zero and less than or equal to 50.</p>'; }
         
-    // set error message to empty string if no invalid entries
-    else {
-        $error_message = ''; }
 
     // if an error message exists, go to the index page
     if ($error_message != '') {
@@ -70,7 +68,16 @@
 
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br />
-        <?php echo 'This calculation was done on '. date('m.d.Y'); ?>
+        <?php date_default_timezone_set("America/New_York");
+        echo 'This calculation was done on ' .date('M.d.Y h:i'); ?>
+        
+        <form action="index.php" method="post">
+            <div id="buttons">
+                <label>&nbsp;</label>
+                <input type="submit" value="Start Over"/><br />
+            </div>
+        </form>
     </div>
+    
 </body>
 </html>
