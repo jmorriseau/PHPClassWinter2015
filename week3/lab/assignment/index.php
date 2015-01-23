@@ -6,7 +6,8 @@
     </head>
     <body>
         
-        <?php
+        <?php       
+        require_once('database.php');
             
         $name = '';
         $phone = '';
