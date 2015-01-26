@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
- $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015", "root", "");
+ $db = new PDO("mysql:host=localhost;dbname=phpclasswinter2015; port=3307;", "root", "");
   
  $dbs = $db->prepare('select * from demo');  
         

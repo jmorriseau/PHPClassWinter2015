@@ -21,11 +21,11 @@
         
         <form action="post_process.php" method="post">
             
-            Name: <input name="fname" type="text" value="<?php echo $email; ?>" />
+            Name: <input name="fname" type="text" value="<?php echo $fname; ?>" />
             <br />
-            Email: <input name="email" type="text" value="<?php echo $fname; ?>"" />
+            Email: <input name="email" type="text" value="<?php echo $email; ?>" />
             <br />
-            Number: <input name="number" type="number" value="<?php echo $number; ?>"" />
+            Number: <input name="number" type="number" value="<?php echo $number; ?>" />
             
             
             <input type="submit" value="submit" />
