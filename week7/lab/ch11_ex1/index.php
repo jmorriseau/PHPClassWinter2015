@@ -53,12 +53,12 @@ switch( $_POST['action'] ) {
     case 'Sort Tasks':
         sort($task_list);
         break;
-    /*
 
     case 'Cancel Changes':
+        break;
     
   
-*/
+
 }
 }
 
