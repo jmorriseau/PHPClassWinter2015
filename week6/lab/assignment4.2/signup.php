@@ -8,7 +8,7 @@
     <body>
         
         <?php
-//         include './add_signup.php';
+        //include './add_signup.php';
         
         $email = '';
         $password = '';
