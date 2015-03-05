@@ -10,6 +10,7 @@
                      
         $email = filter_input(INPUT_POST,'email');
         $password = filter_input(INPUT_POST,'password');
+        $userPassHash = sha1($password);
  
         
     // validate email entry 
@@ -21,7 +22,7 @@
             $error_message .= '<p>Password is a required field.</p>'; }
         else if ( strlen($password) < 4 ) {
             $error_message .= '<p>Password must be at least 5 characters long.</p>'; }
-            
+                    
     // if an error message exists, go to the add user form
        if ($error_message != '') {
             include('index.php');
