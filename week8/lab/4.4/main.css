@@ -1,0 +1,13 @@
+fieldset {
+    width:400px;
+    margin: auto;
+    margin-bottom: .5em;
+    padding-left: 1em;
+}
+a {
+    text-decoration: none;
+    border: 1px solid blue;
+    background-color: lightgray;
+    padding: 2px;
+    color: #000;
+}
