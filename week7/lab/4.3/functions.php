@@ -29,7 +29,7 @@ function passwordIsRequired ($userPass){
 }
 
 function passwordValidLength ($userPass){
-    if ( strlen($userPass) < 5 ) {
+    if ( strlen($userPass) <= 4 ) {
             return false;
         }
         else {
